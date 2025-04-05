@@ -19,6 +19,8 @@
   users.users.tiagocomba = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    shell = pkgs.fish;
+    ignoreShellProgramCheck = true;
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

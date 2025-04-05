@@ -6,7 +6,15 @@
   services.xserver.xkb.layout = "es";
   services.pulseaudio.enable = false;
   services.pipewire.enable = true;
-  hardware.alsa.enable = false;
   services.openssh.enable = false;
   networking.firewall.enable = false;
+  services.flatpak.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.config.common.default = "*";
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  services.xserver.displayManager.lightdm.enable = true;
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "tiagocomba";
+  };
 }

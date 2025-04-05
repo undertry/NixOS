@@ -7,5 +7,6 @@
     git # version control
     htop # system monitor
     fastfetch # system info tool
+    fish # interpreter for commands
   ];
 }
