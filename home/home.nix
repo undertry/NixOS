@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, user, ... }:
 
 {
   imports = [
@@ -6,7 +6,7 @@
     ./config.nix
   ];
 
-  home.username = "tiagocomba";
-  home.homeDirectory = "/home/tiagocomba";
+  home.username = user;
+  home.homeDirectory = "/home/${user}";
   home.stateVersion = "24.11";
 }
