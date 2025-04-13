@@ -21,6 +21,15 @@
         ./hosts/pegasus.nix
         home-manager.nixosModules.home-manager
       ];
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        config = {
+          allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
+            "nvidia-x11"
+            "nvidia-settings"
+          ];
+        };
+      };
     };
 
     homeConfigurations.tiagocomba = home-manager.lib.homeManagerConfiguration {

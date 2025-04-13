@@ -20,7 +20,7 @@
 
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "video" "input" ];
     shell = pkgs.fish;
     ignoreShellProgramCheck = true;
   };

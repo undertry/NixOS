@@ -8,6 +8,7 @@
     fzf # tool for terminal (search app)
     glow # preview for files markdown
     starship # prompt for fish shell
+    gettext # tools for app translation and localization
   ];
 }
 

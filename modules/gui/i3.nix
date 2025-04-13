@@ -1,24 +1,25 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   services.xserver = {
     enable = true;
     displayManager.lightdm.enable = true;
+    displayManager.startx.enable = true;
     windowManager.i3.enable = true;
 
     xkb.layout = "es";
   };
-
+  
   programs.dconf.enable = true;
 
   environment.variables.GTK_THEME = "Adwaita-dark";
 
-  services.picom = {
-    enable = true;
-    fade = false;
-    shadow = false;
-    vSync = true;
-  };
+  # services.picom = {
+    # enable = true;
+    # fade = false;
+    # shadow = false;
+    # vSync = false;
+  # };
   
   environment.systemPackages = with pkgs; [
     i3 # tiling window manager
